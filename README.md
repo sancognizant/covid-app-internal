@@ -34,8 +34,8 @@ Inspired by:
 Download or clone this repo
 
 ```bash
-git clone https://github.com/innFactory/create-react-app-material-typescript-redux
-cd create-react-app-material-typescript-redux
+git https://github.com/aundang/covid-app-internal.git
+cd covid-app-internal
 ```
 
 Install it and run:
