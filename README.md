@@ -70,5 +70,3 @@ registerServiceWorker();
        "source.organizeImports": true // optional
    },
 ```
-
-## Enable project snippets [OPTIONAL]

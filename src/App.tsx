@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
 import { history } from './configureStore';
 import { Todo } from './model';
-import { HomePage, TodoPage } from './pages';
+import { HomePage, TodoPage, Employee } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
 import { todoList } from './reducers/todo';
@@ -23,6 +23,7 @@ function Routes() {
       <Route exact={true} path="/" component={HomePage} />
       <Route exact={true} path="/home" component={HomePage} />
       <Route exact={true} path="/todo" component={TodoPage} />
+      <Route exact={true} path="/employee" component={Employee} />
     </div>
   );
 }
@@ -48,6 +49,15 @@ function Drawer(props: { todoList: Todo[] }) {
             <TodoIcon todoList={props.todoList} />
           </ListItemIcon>
           <ListItemText primary="Todo" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button onClick={() => history.push('/employee')}>
+          <ListItemIcon>
+            <TodoIcon todoList={props.todoList} />
+          </ListItemIcon>
+          <ListItemText primary="Employee" />
         </ListItem>
       </List>
     </div>

@@ -1,3 +1,2 @@
-export * from "./HomeBox";
-export * from "./TodoDialog";
-export * from "./TodoTable";
+export * from './HomeBox';
+export * from './Todos';
