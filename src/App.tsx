@@ -13,6 +13,8 @@ import { IEMployee } from './model';
 import { HomePage, Employee } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
+import SubmitButton from './components/Form/SubmitButton';
+import TextBox from './components/Form/TextBox';
 import { employeeList } from './reducers/employee';
 
 function Routes() {
@@ -26,7 +28,9 @@ function Routes() {
     </div>
   );
 }
-
+/*
+Drawer function refers to the side menu items. add new list to add new menu items
+*/ 
 function Drawer(props: { employeeList: IEMployee[] }) {
   const classes = useStyles();
   return (
@@ -67,55 +71,56 @@ function App() {
   };
 
   return (
-    <Router history={history}>
-      <div className={classes.root}>
-        <div className={classes.appFrame}>
-          <AppBar className={classes.appBar}>
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerToggle}
-                className={classes.navIconHide}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" color="inherit" noWrap={isMobile}>
-                Cognizant Covid-19 Tracker (Internal)
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <Hidden mdUp>
-            <DrawerMui
-              variant="temporary"
-              anchor={'left'}
-              open={mobileOpen}
-              classes={{
-                paper: classes.drawerPaper
-              }}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true // Better open performance on mobile.
-              }}
-            >
-              <Drawer employeeList={employeeList} />
-            </DrawerMui>
-          </Hidden>
-          <Hidden smDown>
-            <DrawerMui
-              variant="permanent"
-              open
-              classes={{
-                paper: classes.drawerPaper
-              }}
-            >
-              <Drawer employeeList={employeeList} />
-            </DrawerMui>
-          </Hidden>
-          <Routes />
-        </div>
-      </div>
-    </Router>
+    // <Router history={history}>
+    //   <div className={classes.root}>
+    //     <div className={classes.appFrame}>
+    //       <AppBar className={classes.appBar}>
+    //         <Toolbar>
+    //           <IconButton
+    //             color="inherit"
+    //             aria-label="open drawer"
+    //             onClick={handleDrawerToggle}
+    //             className={classes.navIconHide}
+    //           >
+    //             <MenuIcon />
+    //           </IconButton>
+    //           <Typography variant="h6" color="inherit" noWrap={isMobile}>
+    //             Cognizant Covid-19 Tracker (Internal)
+    //           </Typography>
+    //         </Toolbar>
+    //       </AppBar>
+    //       <Hidden mdUp>
+    //         <DrawerMui
+    //           variant="temporary"
+    //           anchor={'left'}
+    //           open={mobileOpen}
+    //           classes={{
+    //             paper: classes.drawerPaper
+    //           }}
+    //           onClose={handleDrawerToggle}
+    //           ModalProps={{
+    //             keepMounted: true // Better open performance on mobile.
+    //           }}
+    //         >
+    //           <Drawer employeeList={employeeList} />
+    //         </DrawerMui>
+    //       </Hidden>
+    //       <Hidden smDown>
+    //         <DrawerMui
+    //           variant="permanent"
+    //           open
+    //           classes={{
+    //             paper: classes.drawerPaper
+    //           }}
+    //         >
+    //           <Drawer employeeList={employeeList} />
+    //         </DrawerMui>
+    //       </Hidden>
+    //       <Routes />
+    //     </div>
+    //   </div>
+    // </Router>
+    <TextBox label = {"test"} defaultValue = {"some value"} readOnly = {false}/>
   );
 }
 

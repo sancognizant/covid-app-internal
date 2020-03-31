@@ -4,6 +4,9 @@
 import { Reducer } from "redux";
 import { Action } from "../model";
 
+/* handlers: object that has keys: actions, values: functions
+that mutate the state based on the action passed
+*/
 export default function createReducer<S>(
 	initialState: S,
 	handlers: any
