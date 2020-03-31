@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useActions } from '../../actions/';
 import * as TodoActions from '../../actions/todo';
+import { display } from '@material-ui/system';
 
 interface Props {
   open: boolean;
@@ -34,32 +35,27 @@ export function EmployeeDialog(props: Props) {
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <div className={classes.wrapper}>
-        <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
-        <FormControl>
-          <InputLabel htmlFor="employeeId">Employee Id</InputLabel>
-          <Input id="employeeId" aria-describedby="my-helper-text" />
-        </FormControl>
-        <FormControl>
-          <InputLabel htmlFor="firstName">First Name </InputLabel>
-          <Input id="firstName" aria-describedby="my-helper-text" />
-        </FormControl>
-        <DialogActions>
-          <Button color="primary" onClick={handleClose}>
-            OK
-          </Button>
-        </DialogActions>
-      </div>
+      <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
+      <FormControl>
+        <InputLabel htmlFor="employeeId">Employee Id</InputLabel>
+        <Input id="employeeId" aria-describedby="my-helper-text" />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="firstName">First Name </InputLabel>
+        <Input id="firstName" aria-describedby="my-helper-text" />
+      </FormControl>
+      <DialogActions>
+        <Button color="primary" onClick={handleClose}>
+          OK
+        </Button>
+      </DialogActions>
     </Dialog>
   );
 }
 
 const useStyles = makeStyles({
   textField: {
-    width: '80%',
+    width: '100%',
     margin: 20
-  },
-  wrapper: {
-    padding: '20px'
   }
 });

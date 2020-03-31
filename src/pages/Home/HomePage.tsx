@@ -8,7 +8,7 @@ import { RootState } from '../../reducers';
 export function HomePage() {
   const classes = useStyles();
   const [boxColor, setBoxColor] = React.useState('red');
-  const todoList = useSelector((state: RootState) => state.todoList);
+  // const todoList = useSelector((state: RootState) => state.todoList);
 
   const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 
