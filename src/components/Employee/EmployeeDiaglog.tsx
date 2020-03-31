@@ -1,5 +1,5 @@
 // prettier-ignore
-import { Button, Dialog, DialogActions, DialogTitle, TextField } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogTitle, FormControl, InputLabel, FormHelperText, Input  } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useActions } from '../../actions/';
@@ -34,19 +34,22 @@ export function EmployeeDialog(props: Props) {
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
-      <TextField
-        id="multiline-flexible"
-        multiline
-        value={newTodoText}
-        onChange={handleChange}
-        className={classes.textField}
-      />
-      <DialogActions>
-        <Button color="primary" onClick={handleClose}>
-          OK
-        </Button>
-      </DialogActions>
+      <div className={classes.wrapper}>
+        <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
+        <FormControl>
+          <InputLabel htmlFor="employeeId">Employee Id</InputLabel>
+          <Input id="employeeId" aria-describedby="my-helper-text" />
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor="firstName">First Name </InputLabel>
+          <Input id="firstName" aria-describedby="my-helper-text" />
+        </FormControl>
+        <DialogActions>
+          <Button color="primary" onClick={handleClose}>
+            OK
+          </Button>
+        </DialogActions>
+      </div>
     </Dialog>
   );
 }
@@ -55,5 +58,8 @@ const useStyles = makeStyles({
   textField: {
     width: '80%',
     margin: 20
+  },
+  wrapper: {
+    padding: '20px'
   }
 });

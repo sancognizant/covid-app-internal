@@ -14,9 +14,9 @@ export function HomePage() {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h4" gutterBottom>
+      {/* <Typography variant="h4" gutterBottom>
         You have {todoList.length} TODOs in your list!
-      </Typography>
+      </Typography> */}
       <div className={classes.centerContainer}>
         <HomeBox size={1000} color={boxColor} />
         <Button
