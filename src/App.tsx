@@ -9,11 +9,11 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
 import { history } from './configureStore';
-import { Todo } from './model';
-import { HomePage, TodoPage, Employee } from './pages';
+import { IEMployee } from './model';
+import { HomePage, Employee } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
-import { todoList } from './reducers/todo';
+import { employeeList } from './reducers/employee';
 
 function Routes() {
   const classes = useStyles();
@@ -22,13 +22,12 @@ function Routes() {
     <div className={classes.content}>
       <Route exact={true} path="/" component={HomePage} />
       <Route exact={true} path="/home" component={HomePage} />
-      <Route exact={true} path="/todo" component={TodoPage} />
-      <Route exact={true} path="/employee" component={Employee} />
+      <Route exact={true} path="/tracker" component={Employee} />
     </div>
   );
 }
 
-function Drawer(props: { todoList: Todo[] }) {
+function Drawer(props: { employeeList: IEMployee[] }) {
   const classes = useStyles();
   return (
     <div>
@@ -44,20 +43,11 @@ function Drawer(props: { todoList: Todo[] }) {
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={() => history.push('/todo')}>
+        <ListItem button onClick={() => history.push('/tracker')}>
           <ListItemIcon>
-            <TodoIcon todoList={props.todoList} />
+            <EmployeeIconCount employeeList={props.employeeList} />
           </ListItemIcon>
-          <ListItemText primary="Todo" />
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem button onClick={() => history.push('/employee')}>
-          <ListItemIcon>
-            <TodoIcon todoList={props.todoList} />
-          </ListItemIcon>
-          <ListItemText primary="Employee" />
+          <ListItemText primary="Daily Tracker Entry" />
         </ListItem>
       </List>
     </div>
@@ -67,7 +57,7 @@ function Drawer(props: { todoList: Todo[] }) {
 function App() {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(true);
-  const todoList = useSelector((state: RootState) => state.todoList);
+  const employeeList = useSelector((state: RootState) => state.employeeList);
   const isMobile = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down('sm')
   );
@@ -108,7 +98,7 @@ function App() {
                 keepMounted: true // Better open performance on mobile.
               }}
             >
-              <Drawer todoList={todoList} />
+              <Drawer employeeList={employeeList} />
             </DrawerMui>
           </Hidden>
           <Hidden smDown>
@@ -119,7 +109,7 @@ function App() {
                 paper: classes.drawerPaper
               }}
             >
-              <Drawer todoList={todoList} />
+              <Drawer employeeList={employeeList} />
             </DrawerMui>
           </Hidden>
           <Routes />
@@ -129,12 +119,12 @@ function App() {
   );
 }
 
-function TodoIcon(props: { todoList: Todo[] }) {
-  let uncompletedTodos = props.todoList.filter(t => t.completed === false);
+function EmployeeIconCount(props: { employeeList: IEMployee[] }) {
+  let employeeCount = props.employeeList.length;
 
-  if (uncompletedTodos.length > 0) {
+  if (employeeCount > 0) {
     return (
-      <Badge color="secondary" badgeContent={uncompletedTodos.length}>
+      <Badge color="secondary" badgeContent={employeeCount}>
         <FormatListNumberedIcon />
       </Badge>
     );

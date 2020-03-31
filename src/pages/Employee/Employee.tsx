@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
-import { TodoDialog, TodoTable } from '../../components/Todos';
+import { EmployeeDialog, EmployeeTable } from '../../components/Employee';
 
 export function Employee() {
   const classes = useStyles();
@@ -18,10 +18,10 @@ export function Employee() {
 
   return (
     <Grid container className={classes.root}>
-      <TodoDialog open={open} onClose={handleClose} />
+      <EmployeeDialog open={open} onClose={handleClose} />
       <Grid item xs={6}>
         <Typography variant="h4" gutterBottom>
-          Employee List
+          Employee Tracker List
         </Typography>
       </Grid>
       <Grid item xs={6}>
@@ -32,12 +32,12 @@ export function Employee() {
             color="secondary"
             onClick={handleAddTodo}
           >
-            Add Employee
+            Add Entry
           </Button>
         </div>
       </Grid>
       <Grid item xs={12}>
-        <TodoTable />
+        <EmployeeTable />
       </Grid>
     </Grid>
   );

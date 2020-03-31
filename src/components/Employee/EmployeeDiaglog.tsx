@@ -10,7 +10,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function TodoDialog(props: Props) {
+export function EmployeeDialog(props: Props) {
   const { open, onClose } = props;
   const classes = useStyles();
   const [newTodoText, setNewTodoText] = React.useState('');
@@ -34,7 +34,7 @@ export function TodoDialog(props: Props) {
 
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Add a new TODO</DialogTitle>
+      <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
       <TextField
         id="multiline-flexible"
         multiline

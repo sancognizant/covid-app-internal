@@ -9,7 +9,7 @@ import * as TodoActions from '../../actions/todo';
 import { Todo } from '../../model';
 import { RootState } from '../../reducers';
 
-export function TodoTable() {
+export function EmployeeTable() {
   const classes = useStyles();
   const todoList = useSelector((state: RootState) => state.todoList);
   const todoActions = useActions(TodoActions);

@@ -1,8 +1,8 @@
-import { TodoAction } from "./todo";
-import { EmployeeAction } from "./cdeEmployee";
+import { TodoAction } from './todo';
+import { EmployeeAction } from './employee';
 
-export * from "./todo";
+export * from './todo';
 
-export * from "./cdeEmployee";
+export * from './employee';
 
 export type Action = TodoAction | EmployeeAction;
