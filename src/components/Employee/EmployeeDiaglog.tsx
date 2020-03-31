@@ -3,8 +3,8 @@ import { Button, Dialog, DialogActions, DialogTitle, FormControl, InputLabel, Fo
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useActions } from '../../actions/';
-import * as TodoActions from '../../actions/todo';
-import { display } from '@material-ui/system';
+import * as EmployeeActions from '../../actions/employee';
+import { IEmployee } from '../../model';
 
 interface Props {
   open: boolean;
@@ -14,23 +14,34 @@ interface Props {
 export function EmployeeDialog(props: Props) {
   const { open, onClose } = props;
   const classes = useStyles();
-  const [newTodoText, setNewTodoText] = React.useState('');
-  const todoActions = useActions(TodoActions);
+  const [employee, setEmployee] = React.useState<IEmployee>({
+    empId: '',
+    lastName: '',
+    firstName: '',
+    department: '',
+    acctName: ''
+  });
+  const employeeActions = useActions(EmployeeActions);
 
   const handleClose = () => {
-    todoActions.addTodo({
-      id: Math.random(),
-      completed: false,
-      text: newTodoText
+    employeeActions.addEmployee({
+      empId: employee.empId,
+      lastName: employee.lastName,
+      firstName: employee.firstName,
+      department: employee.department,
+      acctName: employee.acctName
     });
-    onClose();
 
-    // reset todo text if user reopens the dialog
-    setNewTodoText('');
+    console.log(employee);
+
+    onClose();
   };
 
-  const handleChange = (event: any) => {
-    setNewTodoText(event.target.value);
+  const updateField = (e: any) => {
+    setEmployee({
+      ...employee,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
@@ -38,11 +49,39 @@ export function EmployeeDialog(props: Props) {
       <DialogTitle>Employee Daily Declaration Entry</DialogTitle>
       <FormControl>
         <InputLabel htmlFor="employeeId">Employee Id</InputLabel>
-        <Input id="employeeId" aria-describedby="my-helper-text" />
+        <Input name="empId" value={employee.empId} onChange={updateField} />
       </FormControl>
       <FormControl>
         <InputLabel htmlFor="firstName">First Name </InputLabel>
-        <Input id="firstName" aria-describedby="my-helper-text" />
+        <Input
+          name="firstName"
+          value={employee.firstName}
+          onChange={updateField}
+        />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="lastName">LastName Name </InputLabel>
+        <Input
+          name="lastName"
+          value={employee.lastName}
+          onChange={updateField}
+        />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="department">Department</InputLabel>
+        <Input
+          name="department"
+          value={employee.department}
+          onChange={updateField}
+        />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="acctName">Account Name</InputLabel>
+        <Input
+          name="acctName"
+          value={employee.acctName}
+          onChange={updateField}
+        />
       </FormControl>
       <DialogActions>
         <Button color="primary" onClick={handleClose}>

@@ -1,9 +1,9 @@
-export interface IEMployee {
-  empId: number;
-  lastName: string;
-  firstName: string;
-  department: string;
-  acctName: string;
+export interface IEmployee {
+  empId: string;
+  lastName?: string;
+  firstName?: string;
+  department?: string;
+  acctName?: string;
 }
 
 export enum EmployeeActions {
@@ -19,7 +19,7 @@ interface employeeActionType<T, P> {
 }
 
 export type EmployeeAction =
-  | employeeActionType<typeof EmployeeActions.ADD_EMPLOYEE, IEMployee>
-  | employeeActionType<typeof EmployeeActions.DELETE_EMPLOYEE, number>
-  | employeeActionType<typeof EmployeeActions.UPDATE_EMPLOYEE, number>
+  | employeeActionType<typeof EmployeeActions.ADD_EMPLOYEE, IEmployee>
+  | employeeActionType<typeof EmployeeActions.DELETE_EMPLOYEE, string>
+  | employeeActionType<typeof EmployeeActions.UPDATE_EMPLOYEE, IEmployee>
   | employeeActionType<typeof EmployeeActions.DISPLAY_EMPLOYEE, string>;

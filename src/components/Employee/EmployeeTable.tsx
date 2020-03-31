@@ -5,46 +5,43 @@ import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { useActions } from '../../actions/';
-import * as TodoActions from '../../actions/todo';
-import { Todo } from '../../model';
+import * as EmployeeActions from '../../actions/employee';
+import { IEmployee } from '../../model';
 import { RootState } from '../../reducers';
 
 export function EmployeeTable() {
   const classes = useStyles();
-  const todoList = useSelector((state: RootState) => state.todoList);
-  const todoActions = useActions(TodoActions);
-
-  const onRowClick = (todo: Todo) => {
-    if (todo.completed) {
-      todoActions.uncompleteTodo(todo.id);
-    } else {
-      todoActions.completeTodo(todo.id);
-    }
-  };
+  const employeeList = useSelector((state: RootState) => state.employeeList);
+  const employeeActions = useActions(EmployeeActions);
 
   return (
     <Paper className={classes.paper}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell padding="default">Completed</TableCell>
-            <TableCell padding="default">Text</TableCell>
-            <TableCell padding="default">Delete</TableCell>
+            <TableCell padding="default">ID</TableCell>
+            <TableCell padding="default">First Name</TableCell>
+            <TableCell padding="default">Last Name</TableCell>
+            <TableCell padding="default">Department</TableCell>
+            <TableCell padding="default">Account Name</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {todoList.map((todo: Todo) => {
+          {employeeList.map((employee: IEmployee) => {
             return (
-              <TableRow key={todo.id} hover onClick={event => onRowClick(todo)}>
-                <TableCell padding="none">
-                  <Checkbox checked={todo.completed} />
-                </TableCell>
-                <TableCell padding="none">{todo.text}</TableCell>
-                <TableCell padding="none">
+              <TableRow key={employee.empId} hover>
+                <TableCell padding="default">{employee.empId}</TableCell>
+                <TableCell padding="default">{employee.firstName}</TableCell>
+                <TableCell padding="default">{employee.lastName}</TableCell>
+                <TableCell padding="default">{employee.department}</TableCell>
+                <TableCell padding="default">{employee.acctName}</TableCell>
+                <TableCell padding="default">
                   <IconButton
                     aria-label="Delete"
                     color="default"
-                    onClick={() => todoActions.deleteTodo(todo.id)}
+                    onClick={() =>
+                      employeeActions.deleteEmployee(employee.empId)
+                    }
                   >
                     <DeleteIcon />
                   </IconButton>

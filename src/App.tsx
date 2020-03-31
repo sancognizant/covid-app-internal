@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
 import { history } from './configureStore';
-import { IEMployee } from './model';
+import { IEmployee } from './model';
 import { HomePage, Employee } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
@@ -27,7 +27,7 @@ function Routes() {
   );
 }
 
-function Drawer(props: { employeeList: IEMployee[] }) {
+function Drawer(props: { employeeList: IEmployee[] }) {
   const classes = useStyles();
   return (
     <div>
@@ -119,7 +119,7 @@ function App() {
   );
 }
 
-function EmployeeIconCount(props: { employeeList: IEMployee[] }) {
+function EmployeeIconCount(props: { employeeList: IEmployee[] }) {
   let employeeCount = props.employeeList.length;
 
   if (employeeCount > 0) {
