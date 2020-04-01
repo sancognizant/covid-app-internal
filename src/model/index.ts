@@ -1,5 +1,8 @@
 import { EmployeeAction } from './employee';
+import { SearchBarAction } from './searchBar';
 
 export * from './employee';
 
-export type Action = EmployeeAction;
+export * from './searchBar';
+
+export type Action = EmployeeAction | SearchBarAction;
