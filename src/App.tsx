@@ -13,9 +13,8 @@ import { IEMployee } from './model';
 import { HomePage, Employee } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
-import SubmitButton from './components/Form/SubmitButton';
-import TextBox from './components/Form/TextBox';
 import { employeeList } from './reducers/employee';
+import Registration from './components/Employee/Registration';
 
 function Routes() {
   const classes = useStyles();
@@ -120,7 +119,7 @@ function App() {
     //     </div>
     //   </div>
     // </Router>
-    <TextBox label = {"test"} defaultValue = {"some value"} readOnly = {false}/>
+    <Registration/>
   );
 }
 
