@@ -3,6 +3,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 import { SearchBar } from '../../components/SearchBar';
+import { TeamTableWrapper } from '../../components/TeamTable';
 // import { Chart } from '../../components/Manager';
 // import { ChartLocation } from '../../components/Charts/ChartLocation';
 
@@ -20,6 +21,7 @@ export function Manager() {
       <Typography>Manager's Screen</Typography>
       {/* <Chart/> */}
       <SearchBar />
+      <TeamTableWrapper />
     </Grid>
   )
 //   const pageTitle = 'Your Team\'s Overview';
