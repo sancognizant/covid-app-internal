@@ -239,6 +239,7 @@ const useStyles = makeStyles({
     EmpIdLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
         left: '310px',
@@ -258,6 +259,7 @@ const useStyles = makeStyles({
     },
     FirstNameLabel: {
         position: 'absolute',
+        width: '200px',
         display: 'flex',
         flexWrap: 'wrap',
         height: '20px',
@@ -281,6 +283,7 @@ const useStyles = makeStyles({
     LastNameLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
         left: '310px',
@@ -302,10 +305,11 @@ const useStyles = makeStyles({
 
     ManagerFirstNameLabel: {
         position: 'absolute',
+        width: '200px',
         display: 'flex',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '140px',
         fontFamily: 'Inter',
@@ -325,9 +329,10 @@ const useStyles = makeStyles({
     ManagerLastNameLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '180px',
         fontFamily: 'Inter',
@@ -347,9 +352,10 @@ const useStyles = makeStyles({
     ManagerEmployeeIdLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '210px',
         fontFamily: 'Inter',
@@ -391,9 +397,10 @@ const useStyles = makeStyles({
     MISDepartmentLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '290px',
         fontFamily: 'Inter',
@@ -413,9 +420,10 @@ const useStyles = makeStyles({
     AccountNameLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '330px',
         fontFamily: 'Inter',
@@ -458,9 +466,10 @@ const useStyles = makeStyles({
     WorkLocationLabel: {
         position: 'absolute',
         display: 'flex',
+        width: '200px',
         flexWrap: 'wrap',
         height: '20px',
-        left: '310px',
+        left: '240px',
         right: '1008px',
         top: '410px',
         fontFamily: 'Inter',
