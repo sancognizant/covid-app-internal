@@ -19,7 +19,6 @@ export function TeamTableWrapper () {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     border: '1px black solid',
-    height: 500,
     padding: 20,
     [theme.breakpoints.down('md')]: {
       paddingTop: 50,
