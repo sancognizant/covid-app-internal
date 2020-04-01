@@ -13,7 +13,7 @@ export function HomeBox(props: Props) {
 	return (
 		<Paper className={classes.box} {...other}>
 			<Typography variant="subtitle1" className={classes.text}>
-				I'm an example how to handle dynamic styles based on props
+				Please Stay Safe! Remember to wash your hands!! 
 			</Typography>
 		</Paper>
 	);
@@ -36,5 +36,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 	text: {
 		color: "white",
+		fontSize: 50
 	},
 }));

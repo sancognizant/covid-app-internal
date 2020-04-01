@@ -4,13 +4,14 @@ import { Theme } from '@material-ui/core/styles';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
 import { history } from './configureStore';
 import { IEmployee } from './model';
-import { HomePage, Employee } from './pages';
+import { HomePage, Employee, Manager } from './pages';
 import { RootState } from './reducers/index';
 import { withRoot } from './withRoot';
 import { employeeList } from './reducers/employee';
@@ -23,6 +24,7 @@ function Routes() {
       <Route exact={true} path="/" component={HomePage} />
       <Route exact={true} path="/home" component={HomePage} />
       <Route exact={true} path="/tracker" component={Employee} />
+      <Route exact={true} path="/manager" component={Manager}/>
     </div>
   );
 }
@@ -48,6 +50,14 @@ function Drawer(props: { employeeList: IEmployee[] }) {
             <EmployeeIconCount employeeList={props.employeeList} />
           </ListItemIcon>
           <ListItemText primary="Daily Tracker Entry" />
+        </ListItem>
+      </List>
+      <List>
+        <ListItem button onClick={() => history.push('/manager')}>
+          <ListItemIcon>
+            <SupervisorAccountIcon/>
+          </ListItemIcon>
+          <ListItemText primary="Manager's Screen" />
         </ListItem>
       </List>
     </div>
