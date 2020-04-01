@@ -3,7 +3,6 @@ import { Grid, Button, Box, Paper } from '@material-ui/core';
 import { Theme, createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 import PieChart from 'react-minimal-pie-chart';
-import purple from '@material-ui/core/colors/purple';
 import red from '@material-ui/core/colors/red';
  
 
@@ -65,10 +64,56 @@ export function Chart() {
           100
         ]}
       />
-      <Grid className={classes.paper}>
-        <Paper square/>
-        <Paper square/>
-      </Grid>
+                      <div className='chartLegend'>
+                    <div className='legendHeaders' style={{ display: 'flex', justifyContent:'space-between'}}>
+                        <div className='dummy' style={{ height: '3vh', width: '6vw', margin:'2vh 1vw' }}></div>
+                        <div className='noOfEmployees' style={{ fontSize: '12px', margin: '2vh 1vw'}}>No. of employees</div>
+                    </div>
+                    <div className='legendCubesList' style={{ display: 'flex', flexDirection: 'column', margin: '1vh 1vw'}}>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '12px', width: '12px', marginRight: '1vw', background: '#FFD700'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>No Status</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '12px', width: '12px', marginRight: '1vw', background: '#FF0000'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>Confirmed Case</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '12px', width: '12px', marginRight: '1vw', background: '#FFA500'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>Suspected Case</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '12px', width: '12px', marginRight: '1vw', background: '#008000'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>Stay-Home Notice (SHN)</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '4vh', width: '2vw', marginRight: '1vw', background: '#0000FF'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>Leave of Absence (LOA)</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                        <div className='container1' style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <div className='container2' style={{ display: 'flex', flexDirection: 'row'}}>
+                                 <div className='cube' style={{ height: '12px', width: '12px', marginRight: '1vw', background: '#800080'}}></div>
+                                <div className='cubeName' style={{ fontSize: '12px'}}>Extra Precautionary Measure</div>
+                            </div>
+                            <div style={{ fontSize: '12px', marginRight: '3vw'}}>3</div>
+                        </div>
+                    </div>
+                </div>
     </Grid>
   )
 }
