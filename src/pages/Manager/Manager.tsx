@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
-import { Chart } from '../../components/Manager';
+import { ChartStatus } from '../../components/Charts/ChartStatus';
 import { ChartLocation } from '../../components/Charts/ChartLocation';
 
 export function Manager() {
@@ -23,7 +23,7 @@ export function Manager() {
                 <div className='diagramContainer' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                     <div className='teamStatus' style={{ margin: '2vh 2vw', height: '50vh', width: '25vw'}}>
                         <div style={{ textAlign: 'center', margin: '2vh 2vw'}}>{diagram1}</div>
-                        <Chart />
+                        <ChartStatus />
                     </div>
                     <div className='workLocation' style={{ margin: '2vh 2vw', height: '50vh', width: '25vw'}}>
                         <div style={{ textAlign: 'center', margin: '2vh 2vw'}}>{diagram2}</div>
