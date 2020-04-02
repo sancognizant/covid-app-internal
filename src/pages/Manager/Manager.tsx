@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles, withStyles } from '@material-ui/styles';
 import { ChartStatus } from '../../components/Charts/ChartStatus';
 import { ChartLocation } from '../../components/Charts/ChartLocation';
 import { SearchBar } from '../../components/SearchBar';
 import { TeamTableWrapper } from '../../components/TeamTable';
-// import { Chart } from '../../components/Manager';
-// import { ChartLocation } from '../../components/Charts/ChartLocation';
 
 export function Manager() {
   const classes = useStyles();
+  
 
   return (
     <Grid 
@@ -22,6 +21,15 @@ export function Manager() {
     >
       <Typography>Manager's Screen</Typography>
       {/* <Chart/> */}
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+        direction='row'
+      >
+      <ChartStatus />
+      <ChartLocation />
+      </Grid>
       <SearchBar />
       <TeamTableWrapper />
     </Grid>
@@ -53,6 +61,8 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingTop: 50,
       paddingLeft: 15,
       paddingRight: 15
-    }
+    },
   }
 }));
+
+
