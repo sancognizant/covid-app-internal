@@ -1,16 +1,22 @@
 import { History } from 'history';
 import { combineReducers } from 'redux';
-import { Todo, IEmployee } from '../model';
-import * as todoReducer from './todo';
+import { IEmployee, SearchBar, TeamList, CC } from '../model';
 import * as employeeReducer from './employee';
+import * as searchBarReducer from './searchBar';
+import * as teamReducer from './team';
+import * as closeContactReducer from './closeContact';
 
 export interface RootState {
-  todoList: Todo[];
   employeeList: IEmployee[];
+  searchBar: SearchBar[];
+  teamList: TeamList[];
+  closeContact: CC[];
 }
 
 export default (history: History) =>
   combineReducers({
-    ...todoReducer,
-    ...employeeReducer
+    ...employeeReducer,
+    ...searchBarReducer,
+    ...teamReducer,
+    ...closeContactReducer
   });

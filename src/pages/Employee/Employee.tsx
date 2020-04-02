@@ -12,7 +12,7 @@ export function Employee() {
     setOpen(false);
   };
 
-  const handleAddTodo = () => {
+  const handleAddEmployee = () => {
     setOpen(true);
   };
 
@@ -30,7 +30,7 @@ export function Employee() {
             className={classes.button}
             variant="contained"
             color="secondary"
-            onClick={handleAddTodo}
+            onClick={handleAddEmployee}
           >
             Add Entry
           </Button>

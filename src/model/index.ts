@@ -1,8 +1,17 @@
-import { TodoAction } from './todo';
 import { EmployeeAction } from './employee';
-
-export * from './todo';
+import { SearchBarAction } from './searchBar';
+import { TeamAction } from './team';
+import { CCAction } from './closeContact';
 
 export * from './employee';
 
-export type Action = TodoAction | EmployeeAction;
+export * from './searchBar';
+
+export * from './team';
+
+export * from './closeContact';
+
+export type Action = EmployeeAction 
+                    | SearchBarAction 
+                    | CCAction
+                    | TeamAction;

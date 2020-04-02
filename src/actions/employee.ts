@@ -7,12 +7,6 @@ export function addEmployee(employee: IEmployee): EmployeeAction {
   };
 }
 
-// export function completeTodo(todoId: number) {
-//   return (dispatch: Function, getState: Function) => {
-//     dispatch({ type: TodoActions.COMPLETE_TODO, payload: todoId });
-//   };
-// }
-
 export function updateEmployee(employee: IEmployee): EmployeeAction {
   return {
     type: EmployeeActions.UPDATE_EMPLOYEE,
